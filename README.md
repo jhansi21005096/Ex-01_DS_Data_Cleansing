@@ -20,4 +20,22 @@ Save the Clean data to the file
 
 
 # CODE
+```
+import pandas as pd
+df=pd.read_csv('Data_set.csv')
+print('Befor Cleansing the data:')
+print(df.isnull().sum())
+df['show_name']=df['show_name'].fillna(df['show_name'].mode()[0])
+df['original_network']=df['original_network'].fillna(df['original_network'].mode()
+[0])
+df['rating']=df['rating'].fillna(df['rating'].mean())
+df['current_overall_rank']=df['current_overall_rank'].fillna(df['current_overall_r
+ank'].median())
+df['watchers']=df['watchers'].fillna(df['watchers'].mean())
+print(df) 
+print('After Cleansing the data:')
+print(df.isnull().sum())
+```
 # OUPUT
+![output](datacleaningoutput1.png)
+
